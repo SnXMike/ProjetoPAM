@@ -46,6 +46,7 @@ const CadastroForm = ({ cadastro, onSave, onCancel }) => {
     }
   };
 
+  //Puxando as informações do link viacep e as colocando em uma constante
   const fetchAddress = async () => {
     try {
       const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
@@ -85,6 +86,7 @@ const CadastroForm = ({ cadastro, onSave, onCancel }) => {
         onChangeText={setCep}
         keyboardType="numeric"
      />
+      {/* Botão criado para testar se o Cep posto está correto e preenchendo a constante 'endereco'*/}
       <Button title="Buscar Endereço" onPress={fetchAddress} disabled={cep.length !== 8} />
       <TextInput
         style={styles.input}
