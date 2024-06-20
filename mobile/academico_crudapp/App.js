@@ -27,7 +27,7 @@ const CadastroItem = ({ cadastro, onDelete, onEdit }) => {
 const CadastroForm = ({ cadastro, onSave, onCancel }) => {
   const [id, setId] = useState(null);
   const [cpf, setCpf] = useState(cadastro ? cadastro.cpf : '');
-  const [nome, setNome] = useState(cadastro ? cadastro.nome : null);
+  const [nome, setNome] = useState(cadastro ? cadastro.nome : '');
   const [idade, setIdade] = useState(cadastro ? cadastro.idade : '');
   const [cep, setCep] = useState(cadastro ? cadastro.cep : '');
   const [endereco, setEndereco] = useState(cadastro ? cadastro.endereco : '');
@@ -65,6 +65,7 @@ const CadastroForm = ({ cadastro, onSave, onCancel }) => {
         placeholder="cpf"
         value={cpf}
         onChangeText={setCpf}
+        keyboardType="numeric"
       />
       <TextInput
         style={styles.input}
