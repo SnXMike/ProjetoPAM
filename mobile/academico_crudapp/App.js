@@ -27,7 +27,7 @@ const CadastroItem = ({ cadastro, onDelete, onEdit }) => {
 const CadastroForm = ({ cadastro, onSave, onCancel }) => {
   const [id, setId] = useState(null);
   const [cpf, setCpf] = useState(cadastro ? cadastro.cpf : '');
-  const [nome, setNome] = useState(cadastro ? cadastro.nome : '');
+  const [nome, setNome] = useState(cadastro ? cadastro.nome : null);
   const [idade, setIdade] = useState(cadastro ? cadastro.idade : '');
   const [cep, setCep] = useState(cadastro ? cadastro.cep : '');
   const [endereco, setEndereco] = useState(cadastro ? cadastro.endereco : '');
