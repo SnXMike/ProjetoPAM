@@ -25,7 +25,7 @@ const CadastroItem = ({ cadastro, onDelete, onEdit }) => {
 
 // Criando um componente para o formulário de cadastro e edição de cadastros 
 const CadastroForm = ({ cadastro, onSave, onCancel }) => {
-  const [id, setId] = useState(null);
+  const [id] = useState(null);
   const [cpf, setCpf] = useState(cadastro ? cadastro.cpf : '');
   const [nome, setNome] = useState(cadastro ? cadastro.nome : '');
   const [idade, setIdade] = useState(cadastro ? cadastro.idade : '');
@@ -63,7 +63,7 @@ const CadastroForm = ({ cadastro, onSave, onCancel }) => {
       <TextInput
         style={styles.input}
         placeholder="cpf"
-        value={cpf}
+        value={cpf.toString()}
         onChangeText={setCpf}
         keyboardType="numeric"
       />
@@ -76,14 +76,14 @@ const CadastroForm = ({ cadastro, onSave, onCancel }) => {
       <TextInput
         style={styles.input}
         placeholder="idade"
-        value={idade}
+        value={idade.toString()}
         onChangeText={setIdade}
         keyboardType="numeric"
       />
       <TextInput
         style={styles.input}
         placeholder="cep"
-        value={cep}
+        value={cep.toString()}
         onChangeText={setCep}
         keyboardType="numeric"
      />
